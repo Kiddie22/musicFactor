@@ -1,0 +1,211 @@
+body{
+  position: relative;
+  overflow-x: hidden;
+}
+
+#navBox{
+  z-index: 3;
+  opacity: 80%;
+  background-color: #112d4e;
+  padding: 15px;
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#navBox:hover{
+  opacity: 100%;
+}
+
+.sidemenu{
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #222;
+  padding-top: 100px;
+  height: 100vh;
+  transition-duration: 0.3s;
+  z-index: 3;
+}
+
+.sidemenu a{
+  text-decoration: none;
+  font-size: 26px;
+  color: #999;
+  display: block;
+  visibility: hidden;
+  padding: 8px 8px 60px 30%;
+}
+
+.sidemenu a:hover{
+  color: white;
+}
+
+.sidemenu .closebtn{
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 25px;
+  margin-left: 32px;
+}
+
+#header{
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  height: 10vh;
+  background-image: url("./blank.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header a{
+  width: auto;
+  height: auto;
+}
+
+#companyLogo{
+  position: relative;
+  top: 5px;
+  transform: scale(0.3);
+}
+
+#logoDiv{
+  z-index: 2;
+  background-image: url("./blank.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo{
+  height: auto;
+  width: 100%;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo img{
+  transform: scale(0.3);
+}
+
+#queenFaces{
+  overflow: hidden;
+  height: 100vh;
+  z-index: -1;
+  top: 10vh;
+}
+
+#content{
+  background-image: url('./white.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: auto;
+}
+
+.text{
+  position: relative;
+  left: 200px;
+  font-size: 22px;
+  padding-top: 30px;
+  width: 80%;
+  text-align: justify;
+}
+
+#gallery{
+  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: center;
+}
+
+.gallery{
+  width: 500px;
+  height: 332.5px;
+}
+
+.gallery:hover{
+  transform: scale(1.05);
+  transition-duration: 0.3s;
+}
+
+#connect{
+  border-top: solid #3e3a39;
+  height: 100px;
+  transform: scale(0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times";
+  font-size: 28px;
+  color: #3e3a39;
+}
+
+.social{
+  height: 50px;
+  width: 50px;
+  padding-right: 10px;
+  display: block;
+}
+
+#editorPrompt{
+  position: absolute;
+  right: 0;
+  font-family: "Lane";
+  font-weight: bold;
+  font-size: 20px;
+  color: #222;
+}
+
+#editorPrompt:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#editor{
+  height: 100vh;
+  width: 100%;
+  visibility: hidden;
+  background-color: #222;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times";
+  font-size: 48px;
+  text-align: center;
+  z-index: 4;
+}
+
+#close{
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 80px;
+}

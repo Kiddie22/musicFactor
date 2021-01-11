@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.item1 {
+  height: 200px;
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main main main main'
+    'footer footer footer footer footer footer';
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container > div {
+  text-align: center;
+  font-size: 20px;
+  background-image: url('white.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Times";
+  background-image: url('blank.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+div{
+	text-align: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  margin: auto;
+  padding: 10px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+#logo{
+  transform: scale(0.5);
+  position: absolute;
+  top: -50px;
+  height: 200px;
+}
+
+#connect{
+  margin-top: 40px;
+  border-top: solid #3e3a39;
+  height: 100px;
+  transform: scale(0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times";
+  font-size: 28px;
+  color: #3e3a39;
+}
+
+.social{
+  height: 50px;
+  width: 50px;
+  padding-right: 10px;
+}
+
+#navBox{
+  z-index: 1;
+  opacity: 80%;
+  background-color: #112d4e;
+  padding: 15px;
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#navBox:hover{
+  opacity: 100%;
+}
+
+.sidemenu{
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #222;
+  padding-top: 100px;
+  height: 100vh;
+  transition-duration: 0.3s;
+  z-index: 1;
+}
+
+.sidemenu a{
+  font-size: 26px;
+  color: #999;
+  display: block;
+  visibility: hidden;
+  padding: 8px 8px 60px 30%;
+  text-decoration: none;
+  position: relative;
+  right: 60px;
+
+}
+
+.sidemenu a:hover{
+  color: white;
+}
+
+.sidemenu .closebtn{
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 25px;
+  margin-left: 32px;
+}
+
+</style>
+</head>
+<body>
+
+  <div id="navBox" onclick="openFunction()">&#9776;</div>
+
+  <div  id='menu' class='sidemenu'>
+    <a id='a1' href="..\home_page\main.html"> Home </a>
+    <a id='a2' href="..\store\store.html"> Store </a>
+    <a id='a3' href="..\quiz\quiz.html"> Quiz </a>
+    <a id='a4' href="..\explore\explore_main\tab.html"> Explore </a>
+    <a id='a5' href="..\sitemap\sitemap.html"> Site Map </a>
+    <a id='a6' href="..\team_members\teamcards.html"> About Us </a>
+    <a id='a7' href="#" class='closebtn' onclick="closeFunction()"> x </a>
+  </div>
+
+<div class="grid-container">
+
+  <div class="item1"> <img class='wallpaper' src='./blank.png'>
+    <div id='logo'>
+      <a href="..\home_page\main.html">
+        <img class="logo" src="logo_header.png"/>
+      </a>
+    </div>
+  </div>
+  <div class="item3">
+
+  <div class="flip-card">
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="Sithira_pic.jpg" alt="Avatar" style="width:200px;height:200px;">
+      </div>
+      <div class="flip-card-back">
+        <h3>Sithira Panditha</h3>
+        <p>Student 01</p>
+      </div>
+      </div>
+    </div>
+
+    &nbsp;
+
+  <div class="flip-card">
+  	  <div class="flip-card-inner">
+  		<div class="flip-card-front">
+  		  <img src="Rasula_pic.png" alt="Avatar" style="width:200px;height:200px;">
+  		</div>
+  		<div class="flip-card-back">
+  		  <h3>Rasula Yadithya</h3>
+  		  <p>Student 02</p>
+  		</div>
+  	  </div>
+  	</div>
+
+    &nbsp;
+
+  <div class="flip-card">
+  	  <div class="flip-card-inner">
+  		<div class="flip-card-front">
+  		  <img src="Asel_pic.jpg" alt="Avatar" style="width:200px;height:200px;">
+  		</div>
+  		<div class="flip-card-back">
+  		  <h3>Asel Sanjula</h3>
+  		  <p>Student 03</p>
+  		</div>
+  	  </div>
+  	</div>
+
+    &nbsp;
+
+  <div class="flip-card">
+	  <div class="flip-card-inner">
+		<div class="flip-card-front">
+		  <img src="Thisath_pic.jpg" alt="Avatar" style="width:200px;height:200px;">
+		</div>
+		<div class="flip-card-back">
+		  <h3>Thisath Thiyunajith</h3>
+		  <p>Student 04</p>
+		</div>
+	  </div>
+	</div>
+
+  </div>
+
+  <div class="item5">
+
+    <!-- Social container-->
+    <div id= 'connect'>
+      Connect | &nbsp
+        <img id='sc' class='social' src='./sc.png'>
+        <img id='fb' class='social' src='./fb.png'>
+        <img id='twitter' class='social' src='./twitter.png'>
+
+        </div>
+
+    </div>
+  </div>
+</div>
+<script src='teamcards.js'>
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        Music Factor | Home Page
+      </title>
+      <script src="https://kit.fontawesome.com/e3766abd79.js" crossorigin="anonymous"></script>
+      <link rel='stylesheet' type="text/css" href='main.css'>
+    </head>
+    <body>
+
+
+      <!--Navigation Bar-->
+      <div id='fixed'><img src="./blank.png"></div>
+      <div id="navBox" onclick="openFunction()">&#9776;</div>
+
+      <div  id='menu' class='sidemenu'>
+    		<a id='a1' href="..\home_page\main.html"> Home </a>
+    		<a id='a2' href="..\store\store.html"> Store </a>
+    		<a id='a3' href="..\quiz\quiz.html"> Quiz </a>
+    		<a id='a4' href="..\explore\explore_main\tab.html"> Explore </a>
+    		<a id='a5' href="..\sitemap\sitemap.html"> Site Map </a>
+    		<a id='a6' href="..\team_members\teamcards.html"> About Us </a>
+    		<a id='a7' href="#" class='closebtn' onclick="closeFunction()"> x </a>
+    	</div>
+
+      <div id='toTop'>
+        <a href="#header"> <img src='./up.png'> </a>
+      </div>
+
+      <div id='header' onmouseover="toTopDisappear()">
+        <!--<img src='./full_wp2.png'>-->
+      </div>
+
+      <div id="welcome" onmouseover="enlargeOnHover()" onmouseout="reduceOnReturn()">
+        <div id='content'>
+          <p> Learning the things you love has never been easier.
+            Come browse from our wide range of instruments and have
+            your pick. If you're feeling doubtful, there is always next
+            time. </p>
+          <p> Learn it, Live it, Love it.
+            <br><br>
+            Sincerely, The Music Factor
+          </p>
+        </div>
+      </div>
+
+      <a href="..\store\store.html"><div class='link'>
+        STORE
+      </div></a>
+
+      <a href="..\quiz\quiz.html"><div class='link'>
+        QUIZ
+      </div></a>
+
+      <a href="..\explore\explore_main\tab.html"><div class='link'>
+        EXPLORE
+      </div></a>
+
+
+        <!-- Comment container-->
+      <div id='comment'>
+        <p>Help us <br>
+        get better,<br>
+        leave a <br>
+        comment.</p>
+
+        <!-- Form usued for comment-->
+        <form method="post">
+          Name :  <input type="text" id='name' name='name'>
+          <br>
+          Email : <input type="text" id='email' name='email'>
+          <br>
+          Your Comment : <textarea id='commentbox' cols='82' rows='5'> </textarea>
+          Rating :
+          <i class="fas fa-heart" id='star1' onclick="colorStar1()"></i>
+          <i class="fas fa-heart" id='star2' onclick="colorStar2()"></i>
+          <i class="fas fa-heart" id='star3' onclick="colorStar3()"></i>
+          <i class="fas fa-heart" id='star4' onclick="colorStar4()"></i>
+          <i class="fas fa-heart" id='star5' onclick="colorStar5()"></i>
+          <br>
+          <button id='submit' name="Submit" onclick="checkAns()"> Submit </button>
+        </form>
+
+      </div>
+
+      <!-- Social container-->
+      <div id= 'connect'>
+        Connect | &nbsp
+          <img id='sc' class='social' src='./sc_white.png'>
+          <img id='fb' class='social' src='./fb_white.png'>
+          <img id='twitter' class='social' src='./twitter_white.png'>
+
+          <div id='editorPrompt' onclick="appear()">
+            Editor Details
+          </div>
+
+      </div>
+
+      <div id='editor'>
+        Rasula Yadithya
+        <br>
+        IIT ID: 20191118
+        <br>
+        UoW ID: W1790364
+        <a id='close' onclick="disappear()"> x </a>
+      </div>
+
+
+      <script src='main.js'>
+      </script>
+
+    </body>
+  </html>

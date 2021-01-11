@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.item1 {
+  grid-area: header;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+.item4 { grid-area: main; }
+.item5 { grid-area: footer; }
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main main main main'
+    'footer footer footer footer footer footer';
+  grid-gap: 0px;
+  padding: 5px;
+}
+
+.grid-container > div {
+
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+#btnSubmit {
+	width: 100px;
+	height: 40px;
+	border-radius: 3px;
+	border-color: darkgray;
+	background-color: lightblue;
+	font-weight: 700;
+}
+
+button {
+	width: 150px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: #4169e1;
+	font-weight: 700;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-image: url('blank.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+div {
+	color: slategrey;
+	text-shadow: 0 0 3px #black;
+}
+
+#quizInteface {
+	margin: auto;
+	text-align: center;
+  color: white;
+	border-radius: 40px;
+	border: 3px darkblue;
+	padding: 20px;
+	background-color: #3f72af;
+	width: 50%;
+  font-style: oblique;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+#navBox{
+  z-index: 1;
+  opacity: 80%;
+  background-color: #112d4e;
+  padding: 15px;
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#navBox:hover{
+  opacity: 100%;
+}
+
+.sidemenu{
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #222;
+  padding-top: 100px;
+  height: 100vh;
+  transition-duration: 0.3s;
+  z-index: 1;
+}
+
+.sidemenu a{
+  font-size: 26px;
+  color: #999;
+  display: block;
+  visibility: hidden;
+  padding: 8px 8px 60px 30%;
+  text-decoration: none;
+  position: relative;
+  right: 60px;
+
+}
+
+.sidemenu a:hover{
+  color: white;
+}
+
+.sidemenu .closebtn{
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 25px;
+  margin-left: 32px;
+}
+
+#connect{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 100px;
+  border-top: solid white;
+  transform: scale(0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times";
+  font-size: 28px;
+  color: white;
+}
+
+.social{
+  height: 50px;
+  width: 50px;
+  padding-right: 10px;
+}
+
+#logo{
+  position: absolute;
+  top: -40px;
+  transform: scale(0.3);
+}
+
+</style>
+</head>
+<body>
+  <div id="navBox" onclick="openFunction()">&#9776;</div>
+
+  <div  id='menu' class='sidemenu'>
+    <a id='a1' href="..\home_page\main.html"> Home </a>
+    <a id='a2' href="..\store\store.html"> Store </a>
+    <a id='a3' href="..\quiz\quiz.html"> Quiz </a>
+    <a id='a4' href="..\explore\explore_main\tab.html"> Explore </a>
+    <a id='a5' href="..\sitemap\sitemap.html"> Site Map </a>
+    <a id='a6' href="..\team_members\teamcards.html"> About Us </a>
+    <a id='a7' href="#" class='closebtn' onclick="closeFunction()"> x </a>
+  </div>
+
+<div class="grid-container">
+  <div class="item1"> <img class='wallpaper' src='./blank.png'>
+    <div id='logo'>
+      <a href="..\home_page\main.html">
+        <img id='companyLogo' src='./logo_header.png'>
+      </a>
+   </div>
+   </div>
+  <div class="item4">
+	<div style='transform:  position: relative; top: -80px;'>
+	  <div id="quizInteface">
+            <h2>Radio Button Quiz</h2>
+			<text>Time remaining: <text id="time001">200</text> seconds</text>
+            <hr />
+            <p id="messages"></p>
+            <p id="options"></p>
+            <p id="comments"></p>
+            <p id="buttons"></p>
+      </div>
+	</div>
+  </div>
+  <div class="item5">
+
+    <!-- Social container-->
+    <div id= 'connect'>
+      Connect | &nbsp
+        <img id='sc' class='social' src='./sc_white.png'>
+        <img id='fb' class='social' src='./fb_white.png'>
+        <img id='twitter' class='social' src='./twitter_white.png'>
+
+    </div>
+
+  </div>
+</div>
+
+  <script>
+        var question01 = ["How many strings does a guitar generally have?"];
+        var choices01 = ["<input onclick=correctAns() name=button001 type=radio />6<br /><input onclick=incorrectAns() name=button001 type=radio />5<br /><input onclick=incorrectAns() name=button001 type=radio />4<br /><input onclick=incorrectAns() name=button001 type=radio />8<br />"];
+
+        var question02 = ["Which is 1<sup>st</sup> string on a guitar?"];
+        var choices02 = ["<input onclick=correctAns() name=button002 type=radio />low E<br /><input onclick=incorrectAns() name=button002 type=radio />high E<br /><input onclick=incorrectAns() name=button002 type=radio />A<br /><input onclick=incorrectAns() name=button002 type=radio />B<br />"];
+
+        var question03 = ["What is the name given to the instrument used to play the guitar?"];
+        var choices03 = ["<input onclick=incorrectAns() name=button003 type=radio />Bow<br /><input onclick=correctAns() name=button003 type=radio />Plectrum<br /><input onclick=incorrectAns() name=button003 type=radio />Hammer<br /><input onclick=incorrectAns() name=button003 type=radio />All of the above<br />"];
+
+		    var question04 = ["How many keys are there in a Piano?"];
+        var choices04 = ["<input onclick=incorrectAns() name=button004 type=radio />12<br /><input onclick=incorrectAns() name=button004 type=radio />24<br /><input onclick=correctAns() name=button004 type=radio />88<br /><input onclick=incorrectAns() name=button004 type=radio />196<br />"];
+
+		    var question05 = ["What is not a type of padals on a piano?"];
+        var choices05 = ["<input onclick=incorrectAns() name=button005 type=radio />Soft padel<br /><input onclick=incorrectAns() name=button005 type=radio />Sostenuto padel<br /><input onclick=incorrectAns() name=button005 type=radio />Sustain paddel<br /><input onclick=correctAns() name=button005 type=radio />Bass padel<br />"];
+
+		    var question06 = ["What type of music instruments does Drums belongs to?"];
+        var choices06 = ["<input onclick=incorrectAns() name=button006 type=radio />Woodwing<br /><input onclick=incorrectAns() name=button006 type=radio />Brass<br /><input onclick=incorrectAns() name=button006 type=radio />String<br /><input onclick=correctAns() name=button006 type=radio />Percussions<br />"];
+
+		    var question07 = ["What is not a main part of a Drum?"];
+        var choices07 = ["<input onclick=incorrectAns() name=button007 type=radio />Bass drum<br /><input onclick=incorrectAns() name=button007 type=radio />Hi hats<br /><input onclick=correctAns() name=button007 type=radio />Sustain paddel<br /><input onclick=incorrectAns() name=button007 type=radio />Bass padel<br />"];
+
+		    var question08 = ["What is the highest-pitched instrument in the String instrument family?"];
+        var choices08 = ["<input onclick=incorrectAns() name=button008 type=radio />Guitar<br /><input onclick=incorrectAns() name=button008 type=radio />Harp<br /><input onclick=correctAns() name=button008 type=radio />Violin<br /><input onclick=incorrectAns() name=button008 type=radio />Cello<br />"];
+
+		    var question09 = ["What type of music instruments does flute belongs to?"];
+        var choices09 = ["<input onclick=correctAns() name=button009 type=radio />Woodwing<br /><input onclick=incorrectAns() name=button009 type=radio />Brass<br /><input onclick=incorrectAns() name=button009 type=radio />String<br /><input onclick=incorrectAns() name=button009 type=radio />Percussions<br />"];
+
+		    var question10 = ["Which musical instrument is most versalite?"];
+        var choices10 = ["<input onclick=correctAns() name=button010 type=radio />Piano<br /><input onclick=incorrectAns() name=button010 type=radio />Guitar<br /><input onclick=incorrectAns() name=button010 type=radio />Harp<br /><input onclick=incorrectAns() name=button010 type=radio />Violin<br />"];
+
+		    var score;
+        var time;
+
+        window.onload = function() {
+			messages.innerHTML = "There are 10 multiple choices questions in this quiz. All questions based on musical instruments.";
+            options.innerHTML = "Time is limited to 200 seconds. Each correct answer will add 2 points to your score while each wrong answer will deduct 1 point from your score.\nGood luck!";
+            buttons.innerHTML = "<button onclick=startQuiz()>Start Quiz</button>";
+		}
+
+
+		function startQuiz() {
+            score = 0;
+			time = 200;
+            messages.innerHTML = question01;
+            options.innerHTML = choices01;
+            buttons.innerHTML = "<button onclick=set002()>Start</button>";
+        }
+
+        function set002() {
+            messages.innerHTML = question02;
+            options.innerHTML = choices02;
+            buttons.innerHTML = "<button onclick=set003()>Next</button>";
+        }
+
+
+        function set003() {
+            messages.innerHTML = question03;
+            options.innerHTML = choices03;
+            buttons.innerHTML = "<button onclick=set004()>Next</button>";
+        }
+
+		function set004() {
+            messages.innerHTML = question04;
+            options.innerHTML = choices04;
+            buttons.innerHTML = "<button onclick=set005()>Next</button>";
+        }
+
+		function set005() {
+            messages.innerHTML = question05;
+            options.innerHTML = choices05;
+            buttons.innerHTML = "<button onclick=set006()>Next</button>";
+        }
+
+		function set006() {
+            messages.innerHTML = question06;
+            options.innerHTML = choices06;
+            buttons.innerHTML = "<button onclick=set007()>Next</button>";
+        }
+
+		function set007() {
+            messages.innerHTML = question07;
+            options.innerHTML = choices07;
+            buttons.innerHTML = "<button onclick=set008()>Next</button>";
+        }
+
+		function set008() {
+            messages.innerHTML = question08;
+            options.innerHTML = choices08;
+            buttons.innerHTML = "<button onclick=set009()>Next</button>";
+        }
+
+		function set009() {
+            messages.innerHTML = question09;
+            options.innerHTML = choices09;
+            buttons.innerHTML = "<button onclick=set010()>Next</button>";
+        }
+
+		function set010() {
+            messages.innerHTML = question10;
+            options.innerHTML = choices10;
+            buttons.innerHTML = "<button onclick=showResult()>Score</button>";
+        }
+
+		function correctAns() {
+            score = score + 2;
+        }
+
+        function incorrectAns() {
+            score = score - 1;
+        }
+
+        function showResult() {
+			window.clearInterval(update);
+            c = "-";
+            messages.innerHTML = "End of Quiz";
+            options.innerHTML = "Your score is " + score + " out of 20.";
+            if (score == 20) {
+				comments.innerHTML = "Excellent! You are a genius.";
+				document.getElementById('quizInteface').style.backgroundColor = "#007000"
+			}
+			else if (score >= 15) {
+				comments.innerHTML = "Very good! Almost there.";
+				document.getElementById('quizInteface').style.backgroundColor = "#238823"
+			}
+			else if (score >= 10) {
+				comments.innerHTML = "Good! Try to do better next time.";
+				document.getElementById('quizInteface').style.backgroundColor = "#FFBF00"
+			}
+			else if (score < 10) {
+				comments.innerHTML = "Ok. But not at your best.";
+				document.getElementById('quizInteface').style.backgroundColor = "#D2222D"
+			}
+            buttons.innerHTML = "<button onclick=repeat001()>Repeat</button>";
+        }
+
+		function timer001() {
+            time = time - 1;
+            if (time < 200) {
+                time001.innerHTML = time;
+            }
+
+            if (time < 1) {
+                window.clearInterval(update);
+                message001.innerHTML = "Time's up";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+            }
+        }
+
+        update = setInterval("timer001()", 1000);
+
+        function repeat001() {
+            location.reload();
+        }
+
+        //Navigation Bar Functions
+          function openFunction(){
+            document.getElementById('menu').style.width='40vh';
+            document.getElementById('a1').style.visibility='visible';
+            document.getElementById('a2').style.visibility='visible';
+            document.getElementById('a3').style.visibility='visible';
+            document.getElementById('a4').style.visibility='visible';
+            document.getElementById('a5').style.visibility='visible';
+            document.getElementById('a6').style.visibility='visible';
+            document.getElementById('a7').style.visibility='visible';
+          }
+          function closeFunction(){
+            document.getElementById('menu').style.width='0';
+            document.getElementById('a1').style.visibility='hidden';
+            document.getElementById('a2').style.visibility='hidden';
+            document.getElementById('a3').style.visibility='hidden';
+            document.getElementById('a4').style.visibility='hidden';
+            document.getElementById('a5').style.visibility='hidden';
+            document.getElementById('a6').style.visibility='hidden';
+            document.getElementById('a7').style.visibility='hidden';
+          }
+
+          //Social Media Icons Hover Colorup
+          function colorImageSc(){
+            document.getElementById('sc').src = './sc_colored.png';
+          }
+          function revertColorSc(){
+            document.getElementById('sc').src = './sc_white.png';
+          }
+
+          function colorImageFb(){
+            document.getElementById('fb').src = './fb_colored.png';
+          }
+          function revertColorFb(){
+            document.getElementById('fb').src = './fb_white.png';
+          }
+
+          function colorImageTwitter(){
+            document.getElementById('twitter').src = './twitter_colored.png';
+          }
+          function revertColorTwitter(){
+            document.getElementById('twitter').src = './twitter_white.png';
+          }
+
+          document.getElementById('sc').onmouseover = colorImageSc;
+          document.getElementById('sc').onmouseout = revertColorSc;
+          document.getElementById('fb').onmouseover = colorImageFb;
+          document.getElementById('fb').onmouseout = revertColorFb;
+          document.getElementById('twitter').onmouseover = colorImageTwitter;
+          document.getElementById('twitter').onmouseout = revertColorTwitter;
+
+  </script>
+
+</body>
+</html>

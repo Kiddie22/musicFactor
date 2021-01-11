@@ -1,0 +1,55 @@
+body {
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			background-image: url(blank.png);
+			background-repeat: no-repeat;
+			background-size:cover;
+			background-attachment: fixed;
+			display: flex;
+			justify-content: center;
+		}
+
+		.section{
+			position: relative;
+			top: 30%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: lightblue;
+
+		}
+
+		.logo{
+			position: absolute;
+			left: 50px;
+			top: 25px;
+
+		}
+
+		h1 {
+			text-align: center;
+			position: absolute;
+			left: 45%;
+			font-family: Castellar, serif;
+			font-size: 60px;
+			color: lightblue;
+		}
+
+		h3{
+			text-align: center;
+			color: #e0ccff;
+		}
+
+		.box {
+			display: inline-block;
+			border: solid white;
+		  border-width: 0 1px 0 1px;
+			padding: 20px;
+		}
+
+		#ID {
+			color: #e0ccff;
+			text-align: center;
+			font-size: 18px;
+		}

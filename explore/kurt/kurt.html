@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./explore.css">
+<style>
+
+
+#logo img{
+  transform: scale(0.7);
+}
+
+.item1 {
+  grid-area: header;
+ }
+.item2 { grid-area: main; }
+.item3 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main main main main';
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding-top: 0 10px 10px 10px;
+  font-size: 20px;
+  background-image: url('white.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.info {
+  position: relative;
+  left: 200px;
+  font-size: 22px;
+  padding-top: 30px;
+  width: 80%;
+  text-align: justify;
+}
+
+div {
+	text-align: center;
+}
+
+.galleryimg{
+  justify-content: center;
+}
+
+#gallery img {
+  display: inline-block;
+	height:500px;
+}
+
+#image1{
+  width: 100%;
+}
+
+</style>
+</head>
+<body>
+
+  <div id="navBox" onclick="openFunction()"> &#9776; </div>
+
+  <div  id='menu' class='sidemenu'>
+    <a id='a1' href="..\..\home_page\main.html"> Home </a>
+    <a id='a2' href="..\..\store\store.html"> Store </a>
+    <a id='a3' href="..\..\quiz\quiz.html"> Quiz </a>
+    <a id='a4' href="..\explore_main\tab.html"> Explore </a>
+    <a id='a5' href="..\..\sitemap\sitemap.html"> Site Map </a>
+    <a id='a6' href="..\..\team_members\teamcards.html"> About Us </a>
+    <a id='a7' href="#" class='closebtn' onclick="closeFunction()"> x </a>
+  </div>
+  <div id='header'>
+    <div><a href="..\..\home_page\main.html">
+      <img id='companyLogo' src='./logo_header.png'>
+    </a>  </div>
+  </div>
+
+<div class="grid-container">
+
+  <div class="item1">
+    <div id='logoDiv'>
+      <div id='logo'> <img src='./nirvana1.png'> </div>
+    </div>
+  </div>
+
+  <div class="item2">
+  <img id='image1' src='./kurt.jpg'>
+
+  <br><br>
+	<h2>Kurt Donald Cobain</h2>
+
+	<div class='info'>
+  Kurt Donald Cobain (February 20, 1967 - April 5, 1994) was an American singer and musician. He is best known as a guitarist, primary songwriter and leader of the Nirvana rock band.
+  Through his furious songwriting and unsympathetic personality, Cobain's compositions expanded the thematic conventions of mainstream rock music. He often appeared as the publisher of
+  "Generation X" and has since been considered one of the most influential rock musicians in alternative music history.</div>
+
+	<div class='info'>
+  He was Born in Aberdeen, Washington. Cobain, he formed the Nirvana Band in 1987 with Christie Nossalik and Aaron Berkhard as part of the Seattle music industry, later known as the grunge.
+  The main label is DGC. After signing with Records, Nirvana found global success with the song "Smells Like Teen Spirit" from their critically acclaimed second album, Nevermind (1991).
+  Although Cobain was hailed as the voice of Generation X after the sudden success of Nirvana, he resented it, believing that his message and artistic vision had been misinterpreted by the public.
+  In addition to "Smells Like Teen Spirit", Cobain wrote notable songs for Nirvana, including "About a Girl", "In Bloom", "Come as You Are", "Lithium", "Polly", "Something in the Way", "All Apologies"
+  and "Heart-Shaped Box".</div>
+
+	<div class='info'>During the later part of his life, Cobain struggled with chronic health problems such as heroin addiction and depression. He also struggled with personal
+    and professional reputation influences, including the attention of tabloid newspapers, and his 1992 marriage to musician Courtney Love. In March 1994, Cobain drank a combination of champagne
+    and intervention, and he later became involved in a detox program. In March 1994, Cobain drank a combination of champagne and intervention, and later became involved in a detox program.
+    Cobain was 27 years old when he died on April 8, 1994, at his home in Seattle. Police said that he shot himself in the head and was pronounced dead on April 5.</div>
+
+	<div class='info'>After his death, Cobain was inducted into the Rock and Roll Hall of Fame at their first qualifying in 2014 with members of the Nirvana band, Christie Nossalik and Dave Grol.
+    Rolling Stone added Cobain to their list of the 100 Greatest Guitar Players and 100 Greatest Singers of All Time. Cobain also peaked at number 7 on MTV's 22 Greatest Voices in Music listing.
+    In 2006, Cobain was ranked 20th on the list of the 100 Greatest Metal Singers Ever Created by Hit Parader. </div>
+
+    <div id='gallery' class='galleryimg'>
+      <img src="kurt1.jpg"/>
+      <img src="kurt3.jpg"/>
+    </div>
+
+  </div>
+
+</div>
+<script src='./explore.js'> </script>
+</body>
+</html>

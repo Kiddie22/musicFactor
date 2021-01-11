@@ -1,0 +1,113 @@
+<DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="explore.css">
+		<link rel="stylesheet" type="text/css" href="Store.css">
+
+		<title> Store </title>
+
+	</head>
+
+	<body id='body'>
+
+		<div id="navBox" onclick="openFunction()"> &#9776; </div>
+
+		<div  id='menu' class='sidemenu'>
+  		<a id='a1' href="..\home_page\main.html"> Home </a>
+  		<a id='a2' href="..\store\store.html"> Store </a>
+  		<a id='a3' href="..\quiz\quiz.html"> Quiz </a>
+  		<a id='a4' href="..\explore\explore_main\tab.html"> Explore </a>
+  		<a id='a5' href="..\sitemap\sitemap.html"> Site Map </a>
+  		<a id='a6' href="..\team_members\teamcards.html"> About Us </a>
+  		<a id='a7' href="#" class='closebtn' onclick="closeFunction()"> x </a>
+  	</div>
+
+		<div id='header'>
+      <div><a href="..\home_page\main.html">
+        <img id='companyLogo' src='./logo_header.png'>
+      </a>  </div>
+    </div>
+
+		<input class = "IncreaseFont" type="button" value="Zoom In"  onclick="increaseFontSize()">
+    <input class = "DecreaseFont" type="button" value="Zoom Out" onclick="decreaseFontSize()">
+
+		<h2 class="section-header">CART</h2>
+                <div class="cart-title">
+                    <span class="cart-item"> ITEM </span>
+                    <span class="cart-price"> PRICE </span>
+                    <span class="cart-quantity"> QUANTITY </span>
+                </div>
+                <div class="cart-items">
+                </div>
+
+                <button class="purchase-btn" type="button"><b>PURCHASE</b></button>
+
+		<div class = "form">
+			<p class="form_head">Fill and place Orders</p>
+				<form action="">
+					<span class="input">
+						<input type="text" placeholder=" Name">
+					</span>
+					<span class="input">
+						<input type="text" placeholder=" Email">
+					</span>
+					<span class="input">
+						<input type="text" placeholder=" Address">
+					</span>
+					<span class="input">
+						<input type="text" placeholder=" Mobile">
+					</span>
+					<span>
+						<input type="submit" value="Submit" class="Submit">
+					</span>
+				</form>
+			</div>
+
+
+		<h1 class = "tabname"> Our Products </h1>
+
+		<div class="section">
+
+			<div id="item1">
+				<img id="image" src="Guitar.jpg" height="250px" width="250px">
+				<p id="ID1"><b> Guitar </b></p>
+				<h3><b> $ 39.99</b></h3>
+				<button class="Cartbutton" type="button">Add To Cart</button>
+			</div>
+
+
+			<div id="item2">
+				<img id="image" src="keyboard.jpg" height="250px" width="250px">
+				<p id="ID1"><b> Keyboards </b></p>
+				<h3><b> $ 69.99</b></h3>
+				<button class="Cartbutton" type="button">Add To Cart</button>
+			</div>
+
+
+			<div id="item3">
+				<img id="image" src="violin.jpg" height="250px" width="250px">
+				<p id="ID1"><b> Violins </b></p>
+				<h3><b> $ 45.00</b></h3>
+				<button class="Cartbutton" type="button">Add To Cart</button>
+			</div>
+
+
+			<div id="item4">
+				<img id="image" src="drumkit.jpg" height="250px" width="250px">
+				<p id="ID1"><b> Drum sets </b></p>
+				<h3><b> $ 79.99</b></h3>
+				<button class="Cartbutton" type="button">Add To Cart</button>
+			</div>
+
+		</div>
+
+
+	<script src="Store.js">
+	</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,264 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#header{
+  height: 100vh;
+  width: 100vw;
+  background-image: url('./full_wp2.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#image2{
+  height: 100px;
+  background-image: url('./blank.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#navBox{
+  z-index: 1;
+  opacity: 80%;
+  background-color: #112d4e;
+  padding: 15px;
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#navBox:hover{
+  opacity: 100%;
+}
+
+.sidemenu{
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #222;
+  padding-top: 100px;
+  height: 100vh;
+  transition-duration: 0.3s;
+  z-index: 1;
+}
+
+.sidemenu a{
+  font-size: 26px;
+  color: #999;
+  display: block;
+  visibility: hidden;
+  padding: 8px 8px 60px 30%;
+}
+
+.sidemenu a:hover{
+  color: white;
+}
+
+.sidemenu .closebtn{
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 25px;
+  margin-left: 32px;
+}
+
+#toTop{
+  z-index: 1;
+  visibility: hidden;
+  transform: scale(0.1);
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  bottom: 100px;
+  right: 125px;
+}
+
+#welcome{
+  background-image: url("./white.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  color: #112d4e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#content{
+  width: 500px;
+  text-align: justify;
+  padding-left: 10px;
+  border-left: solid #112d4e;
+  font-family: "Times";
+  font-size: 24px;
+}
+
+.link{
+  opacity: 80%;
+  border-style: solid none none none;
+  border-color: #112d4e;
+  border-width: 1px;
+  background-color: #dbe2ef;
+  width: 100vw;
+  overflow-y: hidden;
+  height: 300px;
+  font-size: 120px;
+  color: #112d4e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+  transition-duration: 0.3s;
+}
+
+.link:hover{
+  border-style: solid none none none;
+  border-color: #112d4e;
+  font-size: 150px;
+  background-color: #112d4e;
+  transition-duration: 0.3s;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  padding: inherit;
+}
+
+#comment{
+  opacity: 85%;
+  transform: scale(0.9);
+  margin-top: 100px;
+  background-color: #dbe2ef;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#comment p{
+  position: relative;
+  left: 185px;
+  bottom: 25px;
+  font-size: 35px;
+  line-height: 1.6;
+  border-right: solid #112d4e;
+  padding-right: 50px;
+}
+
+form{
+  position: relative;
+  left: 200px;
+  padding-left: 50px;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+input{
+  height: 30px;
+  width: 30%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: 5px;
+}
+
+textarea{
+  display: block;
+  padding-top: 3px;
+  padding-left: 3px;
+}
+
+#submit{
+  height: auto;
+  font-size: 15px;
+  font-weight: lighter;
+  color: white;
+  padding: 5px;
+  background-color: #112d4e;
+  cursor: pointer;
+}
+
+#submit:hover{
+  transform: scale(1.1);
+}
+
+#connect{
+  height: 100px;
+  transform: scale(0.9);
+  font-family: "Times";
+  font-size: 28px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social{
+  height: 50px;
+  width: 50px;
+  padding-right: 10px;
+}
+
+#fixed{
+  z-index: -1;
+  position: fixed;
+  width: auto;
+}
+
+#editorPrompt{
+  position: absolute;
+  right: 0;
+  font-family: "Lane";
+  font-size: 20px;
+  color: white;
+}
+
+#editorPrompt:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#editor{
+  height: 100vh;
+  width: 100%;
+  visibility: hidden;
+  background-color: #222;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times";
+  font-size: 48px;
+  text-align: center;
+  z-index: 2;
+}
+
+#close{
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 80px;
+}
