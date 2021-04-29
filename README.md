@@ -1,4 +1,7 @@
 # musicFactor
+[![CodeFactor](https://www.codefactor.io/repository/github/kiddie22/musicfactor/badge)](https://www.codefactor.io/repository/github/kiddie22/musicfactor)
+![Lines Of Code](https://tokei.rs/b1/github/kiddie22/musicfactor?category=code)
+
 ## Web Development group project for Year 1 Semester 1 at IIT
 
 ## How to run
